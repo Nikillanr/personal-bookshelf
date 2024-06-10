@@ -27,7 +27,7 @@
 # Run Scripts
 
 ```Terminal
-git clone https://github.com/shhiivvaam/personal-bookshelf.git
+git clone https://github.com/Nikillanr/personal-bookshelf.git
 
 cd personal-bookshelf
 npm install
