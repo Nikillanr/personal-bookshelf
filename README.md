@@ -2,7 +2,7 @@
 
 ## Live Link:
 
-    https://shhiivvaam-bookshelf.netlify.app/
+    https://nikis-personal-bookshelf.netlify.app/
 
 ### OBJECTIVE :
 
@@ -14,8 +14,6 @@
     2. Add to Bookshelf: Enable users to add books from the search results to a "My Bookshelf" page.
     3. Personal Bookshelf: Display the user's personal bookshelf, which is stored persistently using localStorage.
     4. Responsive Design: Enjoy a seamless experience whether you're browsing on a desktop, tablet, or mobile device.
-
-![1717879126698](image/README/1717879126698.png)![1717879132956](image/README/1717879132956.png)
 
 ### Technologies Used
 
