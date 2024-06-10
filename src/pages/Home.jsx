@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -9,21 +9,7 @@ const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const debounceTimer = setTimeout(() => {
-      if (query.trim().length > 1) {
-        handleSearch();
-      }
-    }, 300);
-
-    return () => clearTimeout(debounceTimer);
-  }, [query]);
-
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
-  };
-
-  const handleSearch = async () => {
+  const handleSearch = useCallback(async () => {
     const trimmedQuery = query.trim();
     if (trimmedQuery.length > 1) {
       setLoading(true);
@@ -39,6 +25,20 @@ const Home = () => {
         setLoading(false);
       }
     }
+  }, [query]);
+
+  useEffect(() => {
+    const debounceTimer = setTimeout(() => {
+      if (query.trim().length > 1) {
+        handleSearch();
+      }
+    }, 300);
+
+    return () => clearTimeout(debounceTimer);
+  }, [query, handleSearch]);
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
   };
 
   const addToBookShelf = (book) => {
